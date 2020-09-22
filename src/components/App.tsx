@@ -1,27 +1,12 @@
 import React from 'react';
+import { HashRouter, Route } from 'react-router-dom';
 
-const App = () => {
-  const data = [
-    {
-      id: 1,
-      title: 'electron',
-      content: 'Hello electron',
-    }, {
-      id: 2,
-      title: 'react',
-      content: 'Hello react',
-    },
-  ];
+import SignIn from './SignIn';
 
-  return (
-    <div className="container">
-      {data.map((d) => (
-        <div key={d.id} className="row">
-          <div className="row__title">{d.title}</div>
-        </div>
-      ))}
-    </div>
-  );
-};
+const App = () => (
+  <HashRouter>
+    <Route><SignIn /></Route>
+  </HashRouter>
+);
 
 export default App;
