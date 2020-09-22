@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import TextField from './TextFiled';
+import Button from './Button';
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
@@ -21,9 +23,8 @@ const SignIn = () => {
           onChange={(event) => setPassword(event.target.value)}
           placeholder="Password"
         />
-        <button type="button" className="signIn__button">
-          Sign in
-        </button>
+        <Button text="Sign in" onClick={() => {}} />
+        <Link to="/signup" className="signIn__link">create account</Link>
       </div>
     </div>
   );
