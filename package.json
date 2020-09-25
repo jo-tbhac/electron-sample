@@ -10,6 +10,7 @@
   "dependencies": {
     "@types/react-router-dom": "^5.1.5",
     "axios": "^0.20.0",
+    "camelcase-keys": "^6.2.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
