@@ -1,14 +1,34 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 import TextField from './TextFiled';
 import Button from './Button';
+import { signUp } from '../store/user/actions';
+import { RootState } from '../store';
 
 const SignUp = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
+
+  const { isSignIn } = useSelector((state: RootState) => state.user);
+  const dispatch = useDispatch();
+
+  const onClick = () => {
+    const params = {
+      name,
+      email,
+      password,
+      passwordConfirmation,
+    };
+    dispatch(signUp(params));
+  };
+
+  if (isSignIn) {
+    return <Redirect to="/" />;
+  }
 
   return (
     <div className="signUpScreen">
@@ -37,7 +57,7 @@ const SignUp = () => {
           onChange={(event) => setPasswordConfirmation(event.target.value)}
           placeholder="Password confirmation"
         />
-        <Button text="Sign up" onClick={() => {}} />
+        <Button text="Sign up" onClick={onClick} />
         <Link to="/" className="signUp__link">move to sign in</Link>
       </div>
     </div>

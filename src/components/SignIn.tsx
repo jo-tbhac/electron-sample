@@ -1,12 +1,26 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 import TextField from './TextFiled';
 import Button from './Button';
+import { signIn } from '../store/user/actions';
+import { RootState } from '../store';
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const { isSignIn } = useSelector((state: RootState) => state.user);
+  const dispatch = useDispatch();
+
+  const onClick = () => {
+    dispatch(signIn({ email, password }));
+  };
+
+  if (isSignIn) {
+    return <Redirect to="/" />;
+  }
 
   return (
     <div className="signInScreen">
@@ -23,7 +37,7 @@ const SignIn = () => {
           onChange={(event) => setPassword(event.target.value)}
           placeholder="Password"
         />
-        <Button text="Sign in" onClick={() => {}} />
+        <Button text="Sign in" onClick={onClick} />
         <Link to="/signup" className="signIn__link">create account</Link>
       </div>
     </div>
