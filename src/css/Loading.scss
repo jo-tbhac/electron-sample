@@ -1,0 +1,13 @@
+.loading {
+  align-items: center;
+  background-color: #fff;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+  z-index: 10;
+  &__icon {
+    color: #26a69a;
+  }
+}
