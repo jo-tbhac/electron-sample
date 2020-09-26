@@ -8,6 +8,9 @@ export const newAxios = () => {
 
   instance.defaults.headers.post['Content-Type'] = 'application/json';
   instance.defaults.headers.patch['Content-Type'] = 'application/json';
+  instance.defaults.headers.common['X-Auth-Token'] = localStorage.getItem('token');
+
+  instance.interceptors.response.use((response) => response, (error) => error.response);
 
   return instance;
 };
