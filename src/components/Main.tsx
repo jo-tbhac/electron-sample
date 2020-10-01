@@ -1,7 +1,12 @@
 import React from 'react';
 
+import Sidebar from './Sidebar';
+
 const Main = () => (
-  <div>Main Page</div>
+  <div className="mainContainer">
+    <Sidebar />
+    <div className="main" />
+  </div>
 );
 
 export default Main;
