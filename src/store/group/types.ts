@@ -1,3 +1,5 @@
+export const OPEN_GROUP_FORM = 'OPEN_GROUP_FORM';
+export const CLOSE_GROUP_FORM = 'CLOSE_GROUP_FORM';
 export const FETCH_GROUPS = 'FETCH_GROUPS';
 
 interface Group {
@@ -9,6 +11,15 @@ interface Group {
 
 export interface GroupState {
   groups: Group[]
+  formVisible: boolean
+}
+
+interface OpenGroupFormAction {
+  type: typeof OPEN_GROUP_FORM
+}
+
+interface CloseGroupFormAction {
+  type: typeof CLOSE_GROUP_FORM
 }
 
 interface FetchGroupAction {
@@ -16,4 +27,6 @@ interface FetchGroupAction {
   payload: Group[]
 }
 
-export type GroupActionTypes = FetchGroupAction;
+export type GroupActionTypes = OpenGroupFormAction
+  | CloseGroupFormAction
+  | FetchGroupAction;

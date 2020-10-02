@@ -1,10 +1,21 @@
 import camelcaseKeys from 'camelcase-keys';
 
-import { FETCH_GROUPS } from './types';
 import { AppDispatch } from '..';
 import { newAxios } from '../../utils/setUpAxios';
+import {
+  OPEN_GROUP_FORM,
+  CLOSE_GROUP_FORM,
+  FETCH_GROUPS,
+} from './types';
 
-// eslint-disable-next-line import/prefer-default-export
+export const openGroupForm = () => ({
+  type: OPEN_GROUP_FORM,
+});
+
+export const closeGroupForm = () => ({
+  type: CLOSE_GROUP_FORM,
+});
+
 export const fetchGroups = () => async (dispatch: AppDispatch) => {
   const axios = newAxios();
   const response = await axios.get('/groups');
