@@ -1,0 +1,122 @@
+.groupFormOverlay {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right:0;
+  z-index: 20;
+}
+
+.groupForm {
+  background-color: #fff;
+  border-radius: 3px;
+  box-sizing: border-box;
+  height: 400px;
+  overflow-y: scroll;
+  padding: 0 10px 20px;
+  width: 600px;
+}
+
+.groupFormHeader {
+  align-items: center;
+  border-bottom: solid 1px $border-color;
+  color: $font-color;
+  display: flex;
+  margin-bottom: 15px;
+  padding: 20px 0 3px;
+  &__title {
+    flex: 1;
+    font-weight: 600;
+  }
+  &__closeButton {
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 5px 8px;
+    &:hover {
+      background-color: rgb(245, 245, 245);
+    }
+  }
+}
+
+.groupFormRow {
+  color: $font-color;
+  margin-bottom: 15px;
+  padding: 0 20px;
+  position: relative;
+  &__label {
+    font-size: 0.8rem;
+    margin-bottom: 2px;
+  }
+}
+
+.groupFormButton {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.groupFormMemberList {
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  width: 94%;
+}
+
+.groupFormSearching {
+  align-items: center;
+  color: $font-color;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.groupMembersRow {
+  align-items: center;
+  border-bottom: solid 1px $border-color;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 10px;
+  width: 100%;
+  &__name {
+    color: $font-color;
+  }
+  &__button {
+    background: none;
+    border: none;
+    color: #26a69a;
+    cursor: pointer;
+    &:hover {
+      font-weight: bold;
+    }
+    &--delete {
+      @extend .groupMembersRow__button;
+      color: #d32f2f;
+      &:hover {
+        color: #b71c1c;
+      }
+    }
+  }
+}
+
+.groupMembersNoMember {
+  color: $font-color;
+  font-size: 0.9rem;
+  padding: 10px 0;
+}
+
+.groupFormMemberPool {
+  margin-bottom: 30px;
+}

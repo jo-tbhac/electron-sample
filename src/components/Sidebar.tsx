@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { RootState } from '../store';
-import { fetchGroups } from '../store/group/actions';
+import { fetchGroups, openGroupForm } from '../store/group/actions';
 
 const Sidebar = () => {
   const { groups } = useSelector((state: RootState) => state.group);
@@ -17,7 +17,13 @@ const Sidebar = () => {
     <div className="sidebar">
       <div className="sidebarHeader">
         <div className="sidebarHeader__title">Groups</div>
-        <div className="sidebarHeader__icon">
+        <div
+          role="button"
+          tabIndex={0}
+          onClick={() => dispatch(openGroupForm())}
+          onKeyPress={() => dispatch(openGroupForm())}
+          className="sidebarHeader__icon"
+        >
           <FontAwesomeIcon icon={['fas', 'plus']} />
         </div>
       </div>
