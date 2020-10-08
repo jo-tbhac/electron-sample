@@ -3,11 +3,13 @@ import thunk from 'redux-thunk';
 
 import groupReducer from './group/reducers';
 import loadingReducer from './loading/reducers';
+import messageReducer from './message/reducers';
 import userReducer from './user/reducers';
 
 const rootReducer = combineReducers({
   group: groupReducer,
   loading: loadingReducer,
+  message: messageReducer,
   user: userReducer,
 });
 
