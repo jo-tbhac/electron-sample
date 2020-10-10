@@ -22,15 +22,3 @@
     }
   }
 }
-
-.sidebarMain {
-  &__group {
-    cursor: pointer;
-    padding: 8px 0;
-    padding-left: 25px;
-    padding-right: 5px;
-    &:hover {
-      background-color: #222;
-    }
-  }
-}

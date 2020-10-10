@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { RootState } from '../store';
 import Sidebar from './Sidebar';
+import Message from './Message';
 import GroupForm from './GroupForm';
 
 const Main = () => {
@@ -11,7 +12,7 @@ const Main = () => {
   return (
     <div className="mainContainer">
       <Sidebar />
-      <div className="main" />
+      <Message />
       {formVisible && <GroupForm />}
     </div>
   );

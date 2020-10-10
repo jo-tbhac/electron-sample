@@ -1,5 +1,10 @@
 export const SIGN_IN = 'SIGN_IN';
 
+export interface User {
+  id: number
+  name: string
+}
+
 export interface UserState {
   name: string
   email: string

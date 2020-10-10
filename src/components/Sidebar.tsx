@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { RootState } from '../store';
 import { fetchGroups, openGroupForm } from '../store/group/actions';
+import GroupName from './GroupName';
 
 const Sidebar = () => {
   const { groups } = useSelector((state: RootState) => state.group);
@@ -29,9 +30,7 @@ const Sidebar = () => {
       </div>
 
       <div className="sidebarMain">
-        {groups.map((group) => (
-          <div key={group.id} className="sidebarMain__group">{group.name}</div>
-        ))}
+        {groups.map((group) => <GroupName key={group.id} group={group} />)}
       </div>
     </div>
   );

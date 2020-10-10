@@ -1,0 +1,21 @@
+.messageToolbox {
+  border: solid 1px $border-color;
+  border-radius: 3px;
+  &__input {
+    border: none;
+    border-bottom: solid 1px $border-color;
+    box-sizing: border-box;
+    outline: none;
+    resize: none;
+    width: 100%;
+  }
+}
+
+.toolbox {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  &__submit {
+    padding: 0 5px;
+  }
+}

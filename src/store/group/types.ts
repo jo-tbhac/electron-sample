@@ -8,7 +8,7 @@ export const APPEND_MEMBER = 'APPEND_MEMBER';
 export const REMOVE_MEMBER = 'REMOVE_MEMBER';
 export const CREATE_GROUP = 'CREATE_GROUP';
 
-interface Group {
+export interface Group {
   id: number
   name: string
   createdAt: string

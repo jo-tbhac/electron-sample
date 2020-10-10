@@ -1,16 +1,23 @@
+import { User } from '../user/types';
+
+export const SELECT_GROUP = 'SELECT_GROUP';
 export const FETCH_MESSAGES = 'FETCH_MESSAGES';
 
-interface Message {
+export interface Message {
   id: number
-  userId: number
-  groupId: number
   body: string
   createdAt: string
-  updatedAt: string
+  user: User
 }
 
 export interface MessageState {
   messages: Message[]
+  targetGroupId: number
+}
+
+interface SelectGroupAction {
+  type: typeof SELECT_GROUP
+  payload: number
 }
 
 interface FetchMessagesAction {
@@ -18,4 +25,4 @@ interface FetchMessagesAction {
   payload: Message[]
 }
 
-export type MessageActionTypes = FetchMessagesAction;
+export type MessageActionTypes = SelectGroupAction | FetchMessagesAction;

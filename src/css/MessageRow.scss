@@ -1,0 +1,22 @@
+.messageRow {
+  border-bottom: solid 1px $border-color;
+  padding: 10px 8px;
+  &__body {
+    color: $font-color;
+    line-height: 1.5rem;
+  }
+}
+
+.messageRowHeader {
+  align-items: flex-end;
+  color: $font-color;
+  display: flex;
+  margin-bottom: 10px;
+  &__user {
+    font-size: 0.9rem;
+    margin-right: 8px;
+  }
+  &__date {
+    font-size: 0.7rem;
+  }
+}
